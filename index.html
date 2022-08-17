@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Line Charts and Scatter Plots</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <canvas id="chartOne"></canvas>
+    <script>
+        var ctx = document.getElementById('chartOne');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                datasets: [{
+                    data:[86, 71, 13, 45, 23, 42, 54, 12, 64, 65, 23, 54],
+                    label:'Candy',
+                    borderColor: 'rgba(120, 120, 255, 1)'
+                },
+                {
+                    data:[100, 21, 113, 0, 12, 65, 98, 112, 35, 65, 76, 12],
+                    label: 'Clothes',
+                    borderColor: 'rgba(255, 100, 255, 1)'
+                },
+                {
+                    data:[0, 21, 35, 12, 32, 65, 89, 56, 32, 98, 13, 10],
+                    label:'Amazon',
+                    borderColor: 'rgba(100, 200, 100, 1)'
+                },
+                {
+                    data:[12, 32, 36, 23, 75, 122, 86, 54, 24, 19, 45, 87],
+                    label:'Movies',
+                    borderColor: 'rgba(0, 0, 0, 1)'
+                }]
+            },
+            options:{
+                plugins:{
+                    title:{
+                        display: true,
+                        text: 'Monthly Spending'
+                    },
+                    legend: {
+                        position: 'left'
+                    }
+                }
+            }
+        });
+    </script>
+    <canvas id="chartTwo"></canvas>
+    <script>
+        var cty = document.getElementById('chartTwo');
+        var nextChart = new Chart(cty, {
+            type: 'scatter',
+            data: {
+                datasets:[{
+                    label: 'Dataset1',
+                    backgroundColor: 'rgba(255, 200, 50, 1)',
+                    pointBackgroundColor: 'rgba(255, 200, 50, 1)',
+                    pointRadius: 4,
+                    data: [
+                        {x: 7, y: 10},
+                        {x: 11, y: 25},
+                        {x: 15, y: 15},
+                        {x: 13, y: 12},
+                        {x: 5, y: 13},
+                        {x: 3, y: 45},
+                        {x: 12, y: 23},
+                        {x: 64, y: 2}
+                    ]
+                }, {
+                    label: 'Dataset2',
+                    backgroundColor: 'rgba(50, 200, 50, 1)',
+                    pointBackgroundColor: 'rgba(50, 200, 50, 1)',
+                    pointRadius: 4,
+                    data: [
+                        {x: 1, y: 10},
+                        {x: 7, y: 13},
+                        {x: 15, y: 16},
+                        {x: 4, y: 47},
+                        {x: 94, y: 44},
+                        {x: 33, y: 96},
+                        {x: 17, y: 86},
+                        {x: 48, y: 95}
+                    ]
+                }, {
+                    label: 'Dataset3',
+                    backgroundColor: 'rgba(47, 94, 44, 1)',
+                    pointBackgroundColor: 'rgba(47, 94, 44, 1)',
+                    pointRadius: 4,
+                    data: [
+                        {x: 29, y: 63},
+                        {x: 34, y: 43},
+                        {x: 78, y: 8},
+                        {x: 52, y: 82},
+                        {x: 100, y: 56},
+                        {x: 49, y: 81},
+                        {x: 90, y: 12},
+                        {x: 36, y: 25},
+                        {x: 42, y: 83},
+                        {x: 76, y: 27}
+                    ]
+                }, {
+                    label: 'Dataset4',
+                    backgroundColor: 'rgba(74, 16, 23, 1)',
+                    pointBackgroundColor: 'rgba(74, 16, 23, 1)',
+                    pointRadius: 4,
+                    data: [
+                        {x: 74, y: 16},
+                        {x: 23, y: 22},
+                        {x: 89, y: 15},
+                        {x: 63, y: 84},
+                        {x: 48, y: 97},
+                        {x: 72, y: 86},
+                        {x: 93, y: 90},
+                        {x: 41, y: 61},
+                        {x: 66, y: 30},
+                        {x: 73, y: 45}
+                    ]
+                }]
+            },
+            options: {
+                scales: {
+                    xAxis: {
+                        beginAtZero: true
+                    },
+                    yAxis: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Sales'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
